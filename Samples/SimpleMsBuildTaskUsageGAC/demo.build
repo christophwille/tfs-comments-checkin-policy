@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="CheckCodeCommentsOnly">
+
+	<UsingTask TaskName="CCCPMSBuildTask.CheckCodeCommentsTask" AssemblyName="ICSharpCode.CCCPLib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5e1bcc7dbbcf84bf"/>
+
+	<Target Name="CheckCodeCommentsOnly" Outputs="CodeCommentsReport.xml">
+		<CheckCodeCommentsTask 
+			TreatParserErrorsAsPolicyViolation="True"
+			Sources="demo.cs"
+			Language="C#"
+			CheckMethods="True"
+			CheckProperties="True"
+			CheckFields="False"
+			CheckClasses="True"
+			CheckEvents="True"
+			CheckPublic="True"
+			CheckPrivate="True"
+			CheckProtected="True"
+			ReportFileName="CodeCommentsReport.xml"
+		/>
+	</Target>
+</Project>

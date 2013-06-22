@@ -1,0 +1,41 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<UsingTask TaskName="CCCPMSBuildTask.CheckCodeCommentsTask" AssemblyFile="$(CheckCodeCommentsMSBuildExtensionsPath)ICSharpCode.CCCPLib.dll"/>
+
+	<PropertyGroup>
+		<ReportFileName Condition=" '$(ReportFileName)' == '' ">$(OutputPath)CodeCommentsReport.xml</ReportFileName>
+		<CheckMethods Condition=" '$(CheckMethods)' == '' ">True</CheckMethods>
+		<CheckClasses Condition=" '$(CheckClasses)' == '' ">True</CheckClasses>
+		<CheckEvents Condition=" '$(CheckEvents)' == '' ">True</CheckEvents>
+		<CheckProperties Condition=" '$(CheckProperties)' == '' ">True</CheckProperties>
+		<CheckFields Condition=" '$(CheckFields)' == '' ">True</CheckFields>
+		<CheckPublic Condition=" '$(CheckPublic)' == '' ">True</CheckPublic>
+		<CheckProtected Condition=" '$(CheckProtected)' == '' ">True</CheckProtected>
+		<CheckPrivate Condition=" '$(CheckPrivate)' == '' ">True</CheckPrivate>
+		<MSBuildAllProjects>$(MSBuildAllProjects);$(CheckCodeCommentsMSBuildExtensionsPath)CheckCodeComments.targets</MSBuildAllProjects>
+	</PropertyGroup>
+	
+	<!-- Register CheckCodeComments target so it is called after the build -->
+	<PropertyGroup>
+		<BuildDependsOn>BeforeBuild;CoreBuild;AfterBuild;CheckCodeComments</BuildDependsOn>
+	</PropertyGroup>
+	<Target 
+		Name="CheckCodeComments"
+		Outputs="$(ReportFileName)"
+		DependsOnTargets="Compile"
+	>
+		<CheckCodeCommentsTask 
+			TreatParserErrorsAsPolicyViolation="$(TreatParserErrorsAsPolicyViolation)"
+			Sources="@(Compile)"
+			Language="$(Language)"
+			CheckMethods="$(CheckMethods)"
+			CheckProperties="$(CheckProperties)"
+			CheckFields="$(CheckFields)"
+			CheckClasses="$(CheckClasses)"
+			CheckEvents="$(CheckEvents)"
+			CheckPublic="$(CheckPublic)"
+			CheckPrivate="$(CheckPrivate)"
+			CheckProtected="$(CheckProtected)"
+			ReportFileName="$(ReportFileName)"
+		/>
+	</Target>
+</Project>

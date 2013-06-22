@@ -1,0 +1,16 @@
+Writing Custom Policies
+http://blogs.infosupport.com/marcelv/pages/CustomPolicyArticle.aspx
+
+***
+
+SharpDevelop
+http://www.icsharpcode.net/opensource/sd/
+http://build.sharpdevelop.net/buildartefacts/ (daily builds)
+
+
+***
+
+Silk Icons
+http://www.famfamfam.com/lab/icons/silk/
+
+http://www.winterdrache.de/freeware/png2ico/

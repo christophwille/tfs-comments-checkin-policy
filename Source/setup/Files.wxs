@@ -1,0 +1,32 @@
+﻿<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		<DirectoryRef Id="TARGETDIR">
+			<Directory Id="ProgramFilesFolder" Name="PFiles">
+				<Directory Id="INSTALLDIR" Name="CCCP 5.0">
+					<Component Guid="25BBB6EA-0267-4CD8-AEBF-0FFB0BB05E82" Id="CccppolDll" DiskId="1">
+						<File Source="..\cccppol\bin\Release\cccppol.dll" Name="cccppol.dll" Id="cccppol.dll" KeyPath="yes" Assembly=".net" AssemblyApplication="cccppol.dll" AssemblyManifest="cccppol.dll" />
+						<Registry Action="write" Id="CccpRegistry2011" 
+						          Key="SOFTWARE\Microsoft\VisualStudio\11.0\TeamFoundation\SourceControl\Checkin Policies" 
+						          Root="HKLM" Type="string" 
+						          Name="CCCPPol" Value="[#cccppol.dll]" />
+						<Registry Action="write" Id="CccpRegistry2012x64" 
+						          Key="SOFTWARE\Wow6432Node\Microsoft\VisualStudio\11.0\TeamFoundation\SourceControl\Checkin Policies" 
+						          Root="HKLM" Type="string" 
+						          Name="CCCPPol" Value="[#cccppol.dll]" />
+					</Component>
+					<Component Guid="65130FDB-4E85-4FC8-B867-CE34B59CC636" Id="ICSharpCodeCCCPLibDll" DiskId="1">
+						<File Source="..\cccppol\bin\Release\ICSharpCode.CCCPLib.dll" 
+						      Name="ICSharpCode.CCCPLib.dll" Id="ICSharpCode.CCCPLib.dll" 
+						      KeyPath="yes" Assembly=".net" AssemblyManifest="ICSharpCode.CCCPLib.dll" />
+					</Component>
+					<Component Guid="B192045C-D7F0-444C-98AE-D00B176C4C2D" Id="ICSharpCodeNRefactoryDll" DiskId="1">
+						<File Source="..\cccppol\bin\Release\ICSharpCode.NRefactory.dll" Name="ICSharpCode.NRefactory.dll" Id="ICSharpCode.NRefactory.dll" KeyPath="yes" Assembly=".net" AssemblyManifest="ICSharpCode.NRefactory.dll" />
+					</Component>
+					<Component Guid="D768A6F0-572C-4873-9BC3-1E7693FC6AAF" Id="ICSharpCodeSharpDevelopDomDll" DiskId="1">
+						<File Source="..\cccppol\bin\Release\ICSharpCode.SharpDevelop.Dom.dll" Name="ICSharpCode.SharpDevelop.Dom.dll" Id="ICSharpCode.SharpDevelop.Dom.dll" KeyPath="yes" Assembly=".net" AssemblyManifest="ICSharpCode.SharpDevelop.Dom.dll" />
+					</Component>
+				</Directory>
+			</Directory>
+		</DirectoryRef>
+	</Fragment>
+</Wix>

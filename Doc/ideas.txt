@@ -1,0 +1,8 @@
+* XSLT for MSBuild task to convert XML output to nicely formatted HTML document
+
+
+Make more VS2010 friendly:
+
+http://blogs.msdn.com/jimlamb/archive/2010/03/31/how-to-implement-package-and-deploy-custom-check-in-policy-for-tfs-2010.aspx
+
+

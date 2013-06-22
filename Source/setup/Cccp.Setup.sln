@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 4.3
+Project("{CFEE4113-1246-4D54-95CB-156813CB8593}") = "Cccp.Setup", "Cccp.Setup.wixproj", "{DC786737-62D1-4AFE-BB23-2C9512324225}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC786737-62D1-4AFE-BB23-2C9512324225}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC786737-62D1-4AFE-BB23-2C9512324225}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC786737-62D1-4AFE-BB23-2C9512324225}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC786737-62D1-4AFE-BB23-2C9512324225}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+EndGlobal

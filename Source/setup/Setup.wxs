@@ -1,0 +1,50 @@
+﻿<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="EF9ECB0E-D311-4F0E-B1EC-3F41021012BA"
+		Name="Code Comment Checking Policy v5 (VS2012)"
+		Manufacturer="ic#code"
+		Language="1033"
+	    Codepage="1252"
+	    UpgradeCode="E0B21F03-359A-4C63-ADC7-D409B408AF6E"
+		Version="5.0.0.0">
+		<Package
+			Description="Installs Code Comment Checking Policy for VS2012"
+			Comments="Comments"
+			InstallerVersion="300"
+			Compressed="yes"
+		/>
+		<!--
+			Source media for the installation. 
+ 			Specifies a single cab file to be embedded in the installer's .msi. 
+		-->
+		<Media Id="1" Cabinet="contents.cab" EmbedCab="yes" CompressionLevel="high"/>
+		
+		<!-- Installation directory and files are defined in Files.wxs -->
+		<Directory Id="TARGETDIR" Name="SourceDir"/>
+		
+		<!-- Check for admin rights -->
+		<Condition Message="Administrator rights are required to install the Code Comment Checking Policy.">
+			Privileged
+		</Condition>
+		
+		<!-- Features to install -->
+		<Feature Id="Complete" Level="1">
+			<Feature Id="CodeCommentCheckingPolicyBinaries" Level="1">
+				<ComponentRef Id="CccppolDll"/>
+				<ComponentRef Id="ICSharpCodeCCCPLibDll"/>
+				<ComponentRef Id="ICSharpCodeNRefactoryDll"/>
+				<ComponentRef Id="ICSharpCodeSharpDevelopDomDll"/>
+			</Feature>
+		</Feature>
+		
+		<!-- 
+			Using the Wix UI library
+ 
+			WixUI_InstallDir does not allow the user to choose 
+			features but adds a dialog to let the user choose a 
+			directory where the product will be installed
+		-->
+		<Property Id="WIXUI_INSTALLDIR">INSTALLDIR</Property>
+		<UIRef Id="WixUI_InstallDir"/>
+	</Product>
+</Wix>
