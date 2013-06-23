@@ -95,11 +95,11 @@ namespace cccpwintestapp
             // 
             // testAssemblyPicker
             // 
-            this.testAssemblyPicker.Location = new System.Drawing.Point(360, 410);
+            this.testAssemblyPicker.Location = new System.Drawing.Point(456, 409);
             this.testAssemblyPicker.Name = "testAssemblyPicker";
-            this.testAssemblyPicker.Size = new System.Drawing.Size(75, 23);
+            this.testAssemblyPicker.Size = new System.Drawing.Size(168, 23);
             this.testAssemblyPicker.TabIndex = 6;
-            this.testAssemblyPicker.Text = "button1";
+            this.testAssemblyPicker.Text = "Pick Plugin Assembly Test";
             this.testAssemblyPicker.UseVisualStyleBackColor = true;
             this.testAssemblyPicker.Click += new System.EventHandler(this.testAssemblyPicker_Click);
             // 
