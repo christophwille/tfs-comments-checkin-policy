@@ -37,6 +37,8 @@
 			</Feature>
 		</Feature>
 		
+		<CustomActionRef Id="VS2012Setup" />
+		
 		<!-- 
 			Using the Wix UI library
  

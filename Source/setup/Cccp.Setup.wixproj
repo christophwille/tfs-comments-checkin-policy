@@ -29,6 +29,7 @@
   </PropertyGroup>
   <ItemGroup>
     <WixExtension Include="WixUIExtension.dll" />
+	<WixExtension Include="WixVSExtension.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Files.wxs" />
